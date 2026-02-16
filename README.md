@@ -45,3 +45,17 @@ int main(void) {
     return 0;
 }
 ```
+
+## To generate compile_commands.json
+
+`bear -- <build_commands>`
+
+```sh
+bear -- make test
+```
+
+OR
+
+```sh
+bear clang -I/usr/local/include -L/usr/local/lib -lhjlib -o build/test test.c
+```

@@ -27,7 +27,7 @@ uninstall:
 
 test:
 	# $(CC) -Iinclude -Lbuild -lhjlib -o build/test test.c
-	$(CC) -lhjlib -o build/test test.c
+	$(CC) -I/usr/local/include -L/usr/local/lib -lhjlib -o build/test test.c
 	build/test
 
 PHONY: clean

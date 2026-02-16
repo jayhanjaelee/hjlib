@@ -10,8 +10,5 @@
 #include <hjlib/ds/stack.h>
 
 int main(void) {
-    hj_hello();
-    print_linked_list();
-    print_stack();
     return 0;
 }
