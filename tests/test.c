@@ -32,7 +32,9 @@ TEST test_write_file(void)  {
 }
 
 /* Suites can group multiple tests with common setup. */
-SUITE(the_suite) {
+// fileio -> suite name
+// suite (group of unit tests) -> unit test
+SUITE(fileio) {
     RUN_TEST(test_read_file);
     RUN_TEST(test_write_file);
 }
@@ -44,7 +46,7 @@ int main(int argc, char **argv) {
     GREATEST_MAIN_BEGIN();      /* command-line options, initialization. */
 
     /* Tests can also be gathered into test suites. */
-    RUN_SUITE(the_suite);
+    RUN_SUITE(fileio);
 
     GREATEST_MAIN_END();        /* display results */
 }
