@@ -16,19 +16,18 @@ build/obj/%.o : src/%.c
 
 install: $(OBJECTS)
 	@mkdir -p $(BUILD_DIR)
-	ar rcs $(BUILD_DIR)/$(TARGET) $(OBJECTS)
+	@ar rcs $(BUILD_DIR)/$(TARGET) $(OBJECTS)
 	@mkdir -p /usr/local/include/hjlib
-	cp -r include/* /usr/local/include/hjlib
-	cp build/$(TARGET) /usr/local/lib
+	@cp -r include/* /usr/local/include/hjlib
+	@cp build/$(TARGET) /usr/local/lib
 
 uninstall:
 	rm -rf /usr/local/include/hjlib
 	rm -f /usr/local/lib/$(TARGET)
 
-test:
-	# $(CC) -Iinclude -Lbuild -lhjlib -o build/test test.c
-	$(CC) -I/usr/local/include -L/usr/local/lib -lhjlib -o build/test test.c
-	build/test
+test: install
+	@bear -- $(CC) -Iinclude -L/usr/local/lib -lhjlib -o build/test tests/test.c
+	@build/test -v | scripts/greenest
 
 PHONY: clean
 

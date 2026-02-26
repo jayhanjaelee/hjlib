@@ -1,12 +1,12 @@
 [
   {
-    "file": "test.c",
+    "file": "tests/test.c",
     "arguments": [
       "clang",
-      "-I/usr/local/include",
+      "-Iinclude",
       "-o",
       "build/test",
-      "test.c"
+      "tests/test.c"
     ],
     "directory": "/Users/jay/Desktop/hjlib",
     "output": "build/test"
