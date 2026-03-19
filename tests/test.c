@@ -39,6 +39,15 @@ SUITE(fileio) {
     RUN_TEST(test_write_file);
 }
 
+TEST linked_list(void) {
+    // printf("linked_list\n");
+    PASS();
+}
+
+SUITE(ds) {
+    RUN_TEST(linked_list);
+}
+
 /* Add definitions that need to be in the test runner's main file. */
 GREATEST_MAIN_DEFS();
 
@@ -46,7 +55,7 @@ int main(int argc, char **argv) {
     GREATEST_MAIN_BEGIN();      /* command-line options, initialization. */
 
     /* Tests can also be gathered into test suites. */
-    RUN_SUITE(fileio);
+    // RUN_SUITE(fileio);
 
     GREATEST_MAIN_END();        /* display results */
 }

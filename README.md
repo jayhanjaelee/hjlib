@@ -10,19 +10,25 @@ This repository is about my custom C Library.
 make
 ```
 
-### Install
+### create main target
+
+```sh
+make build
+```
+
+### Install Libraries
 
 ```sh
 sudo make install
 ```
 
-### Uninstall
+### Uninstall Libraries
 
 ```sh
 sudo make uninstall
 ```
 
-### Test
+### Build Test Target
 
 ```sh
 make test

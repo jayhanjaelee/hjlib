@@ -1,5 +1,5 @@
 CC = clang
-CFLAGS = -Wall -Iinclude
+CFLAGS = -g -Wall -Iinclude
 
 BUILD_DIR = build
 
@@ -12,7 +12,11 @@ all: $(OBJECTS)
 
 build/obj/%.o : src/%.c
 	@mkdir -p $(dir $@)
+	@chmod +w $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@ -MD
+
+build: $(OBJECTS)
+	$(CC) $(CFLAGS) -o build/main $^
 
 install: $(OBJECTS)
 	@mkdir -p $(BUILD_DIR)
